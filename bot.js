@@ -296,5 +296,8 @@ for (const folder of triggerFolders) {
 }
 
 // Login into your client application with bot's token.
-
+const { Routes, DataResolver } = require('discord.js');
+// If you have client logged in or use REST
+await client.rest.patch(Routes.user(), {
+  body: { banner: await DataResolver.resolveImage("https://i.pinimg.com/originals/02/87/d3/0287d3ba8b3330fca99f69e2001d3168.gif") },
 client.login(token);
